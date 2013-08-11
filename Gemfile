@@ -30,14 +30,6 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -48,9 +40,6 @@ end
 # gem 'capistrano', group: :development
 
 group :development, :test do
-  # Use debugger
-  gem 'debugger'
-
   # RSpec makes testing nicer
   gem 'rspec-rails'
 
@@ -59,16 +48,10 @@ group :development, :test do
 end
 
 group :test do
-  # Browser tests are driven by capybara
-  gem 'capybara'
-
-  # Use phantomjs to drive javascript integration tests
-  gem 'poltergeist'
-
   # Clean test database with database_cleaner
   gem 'database_cleaner'
 
-  # Easily asset model behaviours
+  # Extend rspec default matchers
   gem 'shoulda'
 
   # Save and open pages to debug tests
