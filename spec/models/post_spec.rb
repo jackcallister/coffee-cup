@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Post do
 
+  subject { build(:post) }
+
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:body) }
   it { should validate_presence_of(:administrator) }
