@@ -8,9 +8,16 @@ describe Post do
 
   it { should belong_to(:administrator) }
 
-  describe "#author" do
-    let(:administrator) { build(:administrator) }
-    subject { build(:post, administrator: administrator) }
-    its(:author) { should eq administrator.username }
+  context "#author" do
+
+    it "calls administrator.username" do
+      subject.administrator.should_receive(:username)
+      subject.author
+    end
+
+    it "is the administrator username" do
+      subject.administrator.stub(username: "Test Username")
+      subject.author.should eq "Test Username"
+    end
   end
 end
