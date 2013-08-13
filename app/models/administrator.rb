@@ -4,4 +4,8 @@ class Administrator < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :username, presence: true
+
+  has_many :posts
 end
