@@ -6,6 +6,10 @@ describe PostsController do
   let(:valid_attributes)    { { title: "Test Post", body: "Test body", administrator_id: administrator.id } }
   let(:invalid_attributes)  { { title: "Test Post", body: "Test body" } }
 
+  before do
+    sign_in :administrator, administrator
+  end
+
   describe "POST #create" do
 
     context "with valid attributes" do
@@ -26,7 +30,7 @@ describe PostsController do
           post :create, { post: invalid_attributes }
         }.to change(Post, :count).by(0)
       end
-      it "render the new action" do
+      it "renders the new action" do
         post :create, { post: invalid_attributes }
         response.should render_template :new
       end
