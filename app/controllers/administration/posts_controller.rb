@@ -1,4 +1,12 @@
-class PostsController < ApplicationController
+class Administration::PostsController < Administration::BaseController
+
+  def index
+    @posts = Post.all
+  end
+
+  def new
+    @post = Post.new()
+  end
 
   def create
     authorize! :create, Post

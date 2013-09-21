@@ -1,7 +1,14 @@
 CoffeeCup::Application.routes.draw do
+
   devise_for :administrators, :path => '', :path_names => {:sign_in => 'sign-in', :sign_out => 'sign-out'}
 
-  resources :posts
+  namespace :administration do
+
+    resources :posts
+  end
+
+  root to: "home#show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
