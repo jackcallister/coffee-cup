@@ -48,6 +48,8 @@ group :development, :test do
 
   # Factories make tests simpler
   gem 'factory_girl_rails'
+
+  gem 'debugger'
 end
 
 group :test do
